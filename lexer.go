@@ -10,45 +10,45 @@ import (
 type TokenType int
 
 const (
-	TokenText TokenType = iota
-	TokenVariableStart    // {{
-	TokenVariableEnd      // }}
-	TokenRawStart         // {{{
-	TokenRawEnd           // }}}
-	TokenBlockStart       // {{#
-	TokenBlockEnd         // {{/}}
-	TokenFilterStart      // |
-	TokenPartialStart     // {{>
-	TokenCommentStart     // {{! or {{/*
-	TokenCommentEnd       // */}}
-	TokenElse             // {{ else }}
-	TokenStringLit        // "string"
-	TokenIntLit           // 123
-	TokenIdent            // identifier
-	TokenDot              // .
-	TokenComma            // ,
+	TokenText          TokenType = iota
+	TokenVariableStart           // {{
+	TokenVariableEnd             // }}
+	TokenRawStart                // {{{
+	TokenRawEnd                  // }}}
+	TokenBlockStart              // {{#
+	TokenBlockEnd                // {{/}}
+	TokenFilterStart             // |
+	TokenPartialStart            // {{>
+	TokenCommentStart            // {{! or {{/*
+	TokenCommentEnd              // */}}
+	TokenElse                    // {{ else }}
+	TokenStringLit               // "string"
+	TokenIntLit                  // 123
+	TokenIdent                   // identifier
+	TokenDot                     // .
+	TokenComma                   // ,
 	TokenEOF
 )
 
 var tokenNames = map[TokenType]string{
-	TokenText:         "TEXT",
+	TokenText:          "TEXT",
 	TokenVariableStart: "VAR_START",
-	TokenVariableEnd:  "VAR_END",
-	TokenRawStart:     "RAW_START",
-	TokenRawEnd:       "RAW_END",
-	TokenBlockStart:   "BLOCK_START",
-	TokenBlockEnd:     "BLOCK_END",
-	TokenFilterStart:  "FILTER",
-	TokenPartialStart: "PARTIAL",
-	TokenCommentStart: "COMMENT_START",
-	TokenCommentEnd:   "COMMENT_END",
-	TokenElse:         "ELSE",
-	TokenStringLit:    "STRING",
-	TokenIntLit:       "INT",
-	TokenIdent:        "IDENT",
-	TokenDot:          "DOT",
-	TokenComma:        "COMMA",
-	TokenEOF:          "EOF",
+	TokenVariableEnd:   "VAR_END",
+	TokenRawStart:      "RAW_START",
+	TokenRawEnd:        "RAW_END",
+	TokenBlockStart:    "BLOCK_START",
+	TokenBlockEnd:      "BLOCK_END",
+	TokenFilterStart:   "FILTER",
+	TokenPartialStart:  "PARTIAL",
+	TokenCommentStart:  "COMMENT_START",
+	TokenCommentEnd:    "COMMENT_END",
+	TokenElse:          "ELSE",
+	TokenStringLit:     "STRING",
+	TokenIntLit:        "INT",
+	TokenIdent:         "IDENT",
+	TokenDot:           "DOT",
+	TokenComma:         "COMMA",
+	TokenEOF:           "EOF",
 }
 
 func (t TokenType) String() string {
@@ -60,9 +60,9 @@ func (t TokenType) String() string {
 
 // Token represents a lexical token.
 type Token struct {
-	Type    TokenType
-	Value   string
-	Pos     Position
+	Type  TokenType
+	Value string
+	Pos   Position
 }
 
 func (t Token) String() string {

@@ -126,13 +126,13 @@ func (p *Parser) parseVariable() (Node, error) {
 			case TokenStringLit:
 				filter.Args = append(filter.Args, &StringLiteralNode{
 					Value: argTok.Value,
-					Pos:  argTok.Pos,
+					Pos:   argTok.Pos,
 				})
 			case TokenIntLit:
 				val, _ := strconv.Atoi(argTok.Value)
 				filter.Args = append(filter.Args, &IntLiteralNode{
 					Value: val,
-					Pos:  argTok.Pos,
+					Pos:   argTok.Pos,
 				})
 			case TokenIdent:
 				filter.Args = append(filter.Args, &VariableNode{
